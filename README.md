@@ -1,2 +1,2 @@
 # mercury-native-code
-demo app for mercury studios application
+This is a quick example app with ract-native/expo

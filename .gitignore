@@ -1,0 +1,40 @@
+# expo
+.expo/*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# ios
+.DS_Store
+
+# Android
+build/
+.gradle
+local.properties
+*.iml
+
+# jetbrains IDE files
+.idea/*
+!/.idea/runConfigurations
+
+# npm/yarn
+#
+node_modules/
+npm-debug.*
+yarn-debug.log*
+yarn-error.log*
+
+# testing
+/coverage
+
+# .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.eslintcache
+
