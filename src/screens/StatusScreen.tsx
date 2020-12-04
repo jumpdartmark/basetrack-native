@@ -2,8 +2,8 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-export default function SettingsScreen() {
+export default function StatusScreen() {
     return (
-        <Text>SettingsScreen</Text>
+        <Text>StatusScreen</Text>
     );
 }

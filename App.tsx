@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import RawScreen from "./src/screens/RawScreen";
 import SummaryScreen from "./src/screens/SummaryScreen";
-import SettingsScreen from "./src/screens/SettingsScreen";
+import StatusScreen from "./src/screens/StatusScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +17,7 @@ export default function App() {
           <Tab.Navigator>
               <Tab.Screen name="Raw" component={RawScreen} />
               <Tab.Screen name="Summary" component={SummaryScreen} />
-              <Tab.Screen name="Settings" component={SettingsScreen} />
+              <Tab.Screen name="Status" component={StatusScreen} />
           </Tab.Navigator>
       </NavigationContainer>
   );
