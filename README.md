@@ -2,7 +2,7 @@
 This is a quick example app with react-native/expo
 to be used as a code sample for a mercury studio interview.
 
-###About(Functionality)
+##About(Functionality)
 I decided to make a quick app that generates a standard gps file (.gpx).
 Most GPSs save data in the form of a gpx file representing a **track**.
 I personally want a way to generate a .gpx track file without requiring a stand-alone gps device.
@@ -30,7 +30,7 @@ Not to mention a newer expensive device compatible with the service.
     - show indicator of current location and moving direction
     - show connected lines between all or every **n** position entries
     
-###About(code)
+##About(code)
 
 **technology implemented with context and reasoning**
 
