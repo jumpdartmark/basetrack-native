@@ -3,36 +3,22 @@ import React from 'react';
 import { Text, View } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-function TrackHistoryScreen() {
-  return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>HistoryScreen</Text>
-      </View>
-  );
-}
-function CurrentTrackScreen() {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Details Screen xx</Text>
-        </View>
-    );
-}
+import RawScreen from "./src/screens/RawScreen";
+import SummaryScreen from "./src/screens/SummaryScreen";
+import SettingsScreen from "./src/screens/SettingsScreen";
 
-const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-      <>
-          <NavigationContainer>
-              <Tab.Navigator>
-                  <Tab.Screen name="History" component={TrackHistoryScreen} />
-                  <Tab.Screen name="Current" component={CurrentTrackScreen} />
-              </Tab.Navigator>
-          </NavigationContainer>
-      </>
+      <NavigationContainer>
+          <Tab.Navigator>
+              <Tab.Screen name="Raw" component={RawScreen} />
+              <Tab.Screen name="Summary" component={SummaryScreen} />
+              <Tab.Screen name="Settings" component={SettingsScreen} />
+          </Tab.Navigator>
+      </NavigationContainer>
   );
 }
