@@ -26,6 +26,7 @@ Not to mention a newer expensive device compatible with the service.
         - current lat/long
         - indicator if user is moving or not
         - direction moving
+        - current speed over ground
  - **map**(MAYBE... if I have time)
     - show indicator of current location and moving direction
     - show connected lines between all or every **n** position entries
