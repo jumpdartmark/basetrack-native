@@ -3,6 +3,9 @@
     "name": "mercury-code-tracks",
     "slug": "mercury-code-tracks",
     "version": "1.0.0",
+    "platforms": [
+      "android"
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {

@@ -4,6 +4,10 @@ import { Text, View } from 'react-native';
 
 export default function RawScreen() {
     return (
-        <View><Text>RawScreen</Text></View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <Text>RawScreen</Text>
+        </View>
     );
 }
+
+
