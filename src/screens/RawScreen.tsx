@@ -9,10 +9,6 @@ interface Props {
 }
 
 class RawScreen extends React.Component<Props> {
-    public static navigationOptions = {
-        title: 'Test Screen',
-    };
-
     render() {
         const { navigation } = this.props;
         return (
