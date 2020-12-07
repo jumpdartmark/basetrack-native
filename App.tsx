@@ -7,14 +7,12 @@ import { AppLayout } from './src/AppLayout';
 
 const Tab = createBottomTabNavigator();
 
-import { StatusBar } from 'react-native';
-StatusBar.setBarStyle('dark-content', true);
-
+import { StatusBar, View } from 'react-native';
 export default class App extends React.Component {
     render() {
         return (
             <AppearanceProvider>
-                <AppLayout/>
+                <View style={{ flex: 1, marginTop: StatusBar.currentHeight }}><AppLayout/></View>
             </AppearanceProvider>
         );
     }

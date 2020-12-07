@@ -1,7 +1,9 @@
 
 import * as React from 'react';
+import { Text, View, Platform, StatusBar } from 'react-native';
 
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import RawScreen from './screens/RawScreen';
@@ -12,7 +14,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
-// TODO:move navigation config to screen classes
 export const AppLayout: React.FC = () => {
     return (
         <NavigationContainer>
