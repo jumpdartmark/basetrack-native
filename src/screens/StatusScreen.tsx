@@ -1,9 +1,26 @@
+import * as React from 'react';
+import { Text, View } from 'react-native';
+import { NavigationState } from '@react-navigation/native';
 
-import React from 'react';
-import { Text } from 'react-native';
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
-export default function StatusScreen() {
-    return (
-        <Text>StatusScreen</Text>
-    );
+interface Props {
+    navigation: BottomTabBarProps<NavigationState>;
 }
+
+class StatusScreen extends React.Component<Props> {
+    public static navigationOptions = {
+        title: 'Test Screen',
+    };
+
+    render() {
+        const { navigation } = this.props;
+        return (
+            <View>
+                <Text>Status Screen</Text>
+            </View>
+        );
+    }
+}
+
+export default StatusScreen;

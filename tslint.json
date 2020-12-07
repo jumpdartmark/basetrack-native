@@ -4,8 +4,10 @@
     "tslint-config-airbnb"
   ],
   "rules": {
+    "import-name": [true, { "react": "React" }],
     "no-any": true,
     "prefer-array-literal": [true, { "allow-type-parameters": true }],
-    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case", "allow-leading-underscore"]
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case", "allow-leading-underscore"],
+    "ter-indent": [true, 4]
   }
 }

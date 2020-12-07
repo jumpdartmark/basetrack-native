@@ -1,13 +1,26 @@
-
-import React from 'react';
+import * as React from 'react';
 import { Text, View } from 'react-native';
+import { NavigationState } from '@react-navigation/native';
 
-export default function RawScreen() {
-    return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>RawScreen</Text>
-        </View>
-    );
+import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
+
+interface Props {
+    navigation: BottomTabBarProps<NavigationState>;
 }
 
+class RawScreen extends React.Component<Props> {
+    public static navigationOptions = {
+        title: 'Test Screen',
+    };
 
+    render() {
+        const { navigation } = this.props;
+        return (
+            <View>
+                <Text>Raw Screen</Text>
+            </View>
+        );
+    }
+}
+
+export default RawScreen;

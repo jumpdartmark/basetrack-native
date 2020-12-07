@@ -42,15 +42,15 @@
     "jest-expo": "^39.0.0",
     "react-test-renderer": "^17.0.1",
     "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.0",
     "tslint": "^6.1.3",
     "tslint-config-airbnb": "^5.11.2",
     "typescript": "^3.9.7"
   },
   "private": true,
-  "jest": {
+  "jestxx": {
     "preset": "jest-expo",
     "transform": {
-      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
       "^.+\\.tsx?$": "ts-jest"
     },
     "testMatch": [
@@ -59,12 +59,13 @@
     ],
     "moduleFileExtensions": [
       "js",
+      "jsx",
       "ts",
       "tsx"
     ],
     "globals": {
       "ts-jest": {
-        "tsConfig": {
+        "tsconfig": {
           "jsx": "react"
         }
       }
