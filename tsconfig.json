@@ -9,7 +9,12 @@
     "resolveJsonModule": true,
     "strict": true,
     "types": [
-      "jest"
-    ]
+      "jest",
+      "expo-location"
+    ],
+    "paths": {
+      "*": ["types/*.d.ts"]
+    },
+    "allowJs": true
   }
 }

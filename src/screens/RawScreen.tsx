@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View } from 'react-native';
 import { NavigationState } from '@react-navigation/native';
-import { TrackContext } from '../context/TrackContext';
+import { useTrack } from '../context/TrackContext';
 
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
@@ -10,9 +10,10 @@ interface Props {
 }
 
 const RawScreen: React.FunctionComponent = () => {
-    const pings = React.useContext(TrackContext);
+    const currentTrack = useTrack();
+    // TODO: make this a table or something nicer to look at to see all LocPing records
     return (
-        <Text>{JSON.stringify(pings)}</Text>
+        <Text>{JSON.stringify(currentTrack.pings, null, 1)}</Text>
     );
 };
 
