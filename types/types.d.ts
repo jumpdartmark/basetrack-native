@@ -14,3 +14,14 @@ declare interface LocPing {
     };
     timestamp:number; // The time at which this position information was obtained, in milliseconds since epoch.
 }
+
+declare interface LocSummary {
+    totalDistance:number | null; // distanceTraveled
+    totalElapsedTime:number | null; // millisecond duration of track
+    currentSpeed:number | null;
+    averageSpeed:number | null;
+    maxSpeed:number | null;
+    currentLat:number | null;
+    currentLon:number | null;
+    currentHeading:number | null;
+}

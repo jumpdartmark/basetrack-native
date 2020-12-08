@@ -8,6 +8,7 @@ interface TrackContextData {
     clearTrack: () => void;
     startRecording: () => void;
     stopRecording: () => void;
+    locSummary: LocSummary | null;
 }
 
 const notReady = () => {
@@ -21,6 +22,7 @@ const trackContextDefaultValue: TrackContextData = {
     clearTrack: notReady,
     startRecording: notReady,
     stopRecording: notReady,
+    locSummary: null,
 };
 
 const TrackContext = React.createContext<TrackContextData>(trackContextDefaultValue);
@@ -28,7 +30,18 @@ const TrackContext = React.createContext<TrackContextData>(trackContextDefaultVa
 const TrackProvider: React.FunctionComponent = ({ children }) => {
     const [pings, setPings] = React.useState<LocPing[]>([]);
     const [isRecordingLocation, setIsRecordingLocation] = React.useState<boolean>(true);
+    const [locSummary, setLocSummary] = React.useState<LocSummary>({
+        totalDistance:0,
+        totalElapsedTime:0,
+        currentSpeed:0,
+        averageSpeed:0,
+        maxSpeed:0,
+        currentLat:0,
+        currentLon:0,
+        currentHeading:0,
+    });
 
+    // TODO: calculate summary data
     useInterval(async () => {
         if (isRecordingLocation) {
             const { status } = await Location.requestPermissionsAsync();
@@ -40,12 +53,24 @@ const TrackProvider: React.FunctionComponent = ({ children }) => {
             const location = await Location.getCurrentPositionAsync({});
             const newData = [...pings, { ...location }];
             setPings(newData);
+            const summaryStatus = {
+                currentSpeed: location.coords.speed,
+                currentLat: location.coords.latitude,
+                currentLon: location.coords.longitude,
+                currentHeading: location.coords.heading,
+                totalDistance:0,
+                totalElapsedTime:0,
+                averageSpeed:0,
+                maxSpeed:0,
+            };
+            setLocSummary(summaryStatus);
         }
     },          5000);
 
     const trackApi = {
         pings,
         isRecordingLocation,
+        locSummary,
         stopRecording:() => { setIsRecordingLocation(false); },
         startRecording:() => { setIsRecordingLocation(true); },
         clearTrack:() => { setPings([]); },
