@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, ScrollView } from 'react-native';
 import { NavigationState } from '@react-navigation/native';
 import { useTrack } from '../context/TrackContext';
 
@@ -13,7 +13,9 @@ const RawScreen: React.FunctionComponent = () => {
     const currentTrack = useTrack();
     // TODO: make this a table or something nicer to look at to see all LocPing records
     return (
-        <Text>{JSON.stringify(currentTrack.pings, null, 1)}</Text>
+        <ScrollView>
+            <Text>{JSON.stringify(currentTrack.pings, null, 1)}</Text>
+        </ScrollView>
     );
 };
 
