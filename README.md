@@ -1,6 +1,5 @@
-# mercury-native-code
-This is a quick example app with react-native/expo
-to be used as a code sample for a mercury studio interview.
+# basetrack-native
+This is a quick example app with react-native/expo it will be the base for a couple navigation/tourism projects I am working on.
 
 ## About(Functionality)
 I decided to make a quick app that generates a standard gps file (.gpx).
